@@ -11,7 +11,7 @@ SWEP.Category = "Tactical RP"
 SWEP.SubCatTier = "2Operator"
 SWEP.SubCatType = "1Pistol"
 
-SWEP.Description = "Premium pistol modified to be 3-round burst. High firerate but long burst delay."
+SWEP.Description = "Premium pistol with good accuracy and a light trigger."
 
 SWEP.Trivia_Caliber = "9x19mm"
 SWEP.Trivia_Manufacturer = "Sphinx Systems"
@@ -98,14 +98,14 @@ SWEP.BodyDamageMultipliers = {
 
 // misc. shooting
 
-SWEP.Firemodes = {-3, 1}
+SWEP.Firemode = 1
 SWEP.RunawayBurst = true
 
-SWEP.RPM = 800
-SWEP.RPMMultBurst = 1.5
-SWEP.PostBurstDelay = 0.3
+SWEP.RPM = 750
+--SWEP.RPMMultBurst = 1.5
+--SWEP.PostBurstDelay = 0.3
 
-SWEP.Spread = 0.0035
+SWEP.Spread = 0.0032
 
 SWEP.RecoilPerShot = 1
 SWEP.RecoilMaximum = 8
