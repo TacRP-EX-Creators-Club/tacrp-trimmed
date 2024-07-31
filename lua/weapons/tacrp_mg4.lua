@@ -31,7 +31,7 @@ SWEP.BalanceStats = {
         Damage_Max = 26,
         Damage_Min = 18,
 
-        ClipSize = 75,
+        ClipSize = 100,
     },
     [TacRP.BALANCE_TTT] = {
 
@@ -41,7 +41,7 @@ SWEP.BalanceStats = {
         Damage_Min = 12,
         Range_Min = 750,
         Range_Max = 3000,
-        ClipSize = 75,
+        ClipSize = 100,
 
         BodyDamageMultipliers = {
             [HITGROUP_HEAD] = 2,
@@ -171,7 +171,7 @@ SWEP.HolsterAng = Angle(0, 0, 0)
 
 // reload
 
-SWEP.ClipSize = 100
+SWEP.ClipSize = 150
 SWEP.Ammo = "smg1"
 
 SWEP.ReloadTimeMult = 1
