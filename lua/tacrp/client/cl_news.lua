@@ -965,7 +965,7 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
     {
         Title = "Update 24",
         Type = "Patch Notes",
-        Date = "2024-07-30",
+        Date = "2024-08-01",
         Author = "8Z",
         Major = false,
         Summary = "Small list of fixes.",
@@ -981,6 +981,9 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 <li><b>Changed:</b> Melee Techinques are now free attachments.
 <li><b>Changed:</b> Removed chance to fail an unjam attempt.
 <li><b>Changed:</b> Disabled shotgun reversing their starting animation on non-empty reload.
+<li><b>Changed:</b> Rangefinder now displays range as a percentage on the point of aim.
+<li><b>Changed:</b> Thermal Imager renamed, no longer blurs when peeking.
+<li><b>Changed:</b> SAPHE can now damage Combine Helicopters and LVS vehicles.
 <li><b>Fixed:</b> 40mm Healing grenades not healing.
 <li><b>Fixed:</b> Some sight issues with RMR being on guns it should not.
 <li><b>Fixed:</b> Missing accessory slot for some akimbos.
@@ -995,8 +998,9 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 
 <h3>Expansion Changelist</h3>
 <ul>
-<li><b>Added:</b> SMAW Hummingbird rockets, XM25 flechettes.
+<li><b>Added:</b> SMAW Hummingbird rockets, XM25 flechettes and HEAT grenades.
 <li><b>Changed:</b> Tweaked Kar98k reload behavior.
+<li><b>Changed:</b> Intervention MLG sound now an ammo type. Does what you would expect.
 <li><b>Fixed:</b> SMAW projectiles not obeying explosive damage scaling.
 <li><b>Rebalance:</b> Buff PSG-1, Amphibian, P210; nerf SR-25; tweaked Kar98k.
 </ul>

@@ -758,10 +758,12 @@ function ATT.TacticalCrosshair(self, x, y, spread, sway)
     frac = math.Clamp((rawdist - self:GetValue("Range_Min")) / (self:GetValue("Range_Max") - self:GetValue("Range_Min")), 0, 1)
     if self:GetValue("Damage_Min") <= self:GetValue("Damage_Max") then frac = 1 - frac end
 
-    surface.DrawCircle(x, y, 16, 255, 255, 255, dropalpha * 80)
-    surface.SetDrawColor(255, 255, 255, dropalpha * 60 * frac + 20)
+    -- surface.DrawCircle(x, y, 16, 255, 255, 255, dropalpha * 80)
+    surface.SetDrawColor(255, 255, 255, dropalpha * 150)
     surface.DrawLine(x - 16, y, x + 16, y)
     surface.DrawLine(x, y + 16, x, y - 16)
+    surface.SetFont("DermaDefault")
+    draw.SimpleText(math.Round(frac * 100) .. "%", "DermaDefault", x, y - 16, surface.GetDrawColor(), TEXT_ALIGN_CENTER, TEXT_ALIGN_BOTTOM)
 
     if !TacRP.ConVars["physbullet"]:GetBool() then return end
 
@@ -1051,12 +1053,12 @@ TacRP.LoadAtt(ATT, "tac_bullet")
 ------------------------------
 ATT = {}
 
-ATT.PrintName = "Therm. Imager"
+ATT.PrintName = "Thermal-Cam"
 ATT.FullName = "ZUMQFY Thermal Imaging Device"
 ATT.Icon = Material("entities/tacrp_att_tac_cornershot.png", "mips smooth")
 ATT.Description = "Display a thermal overlay which fuses with the main view while peeking."
 ATT.Pros = {"att.procon.thermal"}
-ATT.Cons = {"att.procon.blurpeek"}
+ATT.Cons = {} --{"att.procon.blurpeek"}
 
 ATT.Model = "models/weapons/tacint/addons/cornershot_mounted.mdl"
 
@@ -1067,11 +1069,11 @@ ATT.CanToggle = true
 
 ATT.TacticalName = "hint.tac.cam_mode"
 
-ATT.Hook_BlurScope = function(wep)
-    if wep:GetScopeLevel() > 0 and wep:GetPeeking() then
-        local d = wep:GetSightAmount()
-        return {d * 0.25, d}
-    end
-end
+-- ATT.Hook_BlurScope = function(wep)
+--     if wep:GetScopeLevel() > 0 and wep:GetPeeking() then
+--         local d = wep:GetSightAmount()
+--         return {d * 0.25, d}
+--     end
+-- end
 
 TacRP.LoadAtt(ATT, "tac_thermal")
