@@ -45,7 +45,7 @@ SWEP.BalanceStats = {
         RecoilKick = 3,
         RPM = 380,
         RPMMultSemi = 0.8,
-        ClipSize = 20,
+        ClipSize = 30,
 
         RecoilResetTime = 0.175,
         RecoilSpreadPenalty = 0.0026,
@@ -173,7 +173,7 @@ SWEP.HolsterAng = Angle(0, 0, 0)
 
 // reload
 
-SWEP.ClipSize = 15
+SWEP.ClipSize = 30
 SWEP.Ammo = "smg1"
 
 SWEP.ReloadTimeMult = 1

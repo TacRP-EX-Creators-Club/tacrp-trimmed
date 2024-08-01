@@ -45,7 +45,7 @@ SWEP.BalanceStats = {
         },
 
         RPM = 600,
-        RecoilSpreadPenalty = 0.003,
+        RecoilSpreadPenalty = 0.0045,
         HipFireSpreadPenalty = 0.008,
     },
     [TacRP.BALANCE_TTT] = {
@@ -117,7 +117,7 @@ SWEP.RPM = 900
 SWEP.RPMMultSemi = 0.6
 
 SWEP.Spread = 0.0045
-SWEP.RecoilSpreadPenalty = 0.003
+SWEP.RecoilSpreadPenalty = 0.005
 SWEP.HipFireSpreadPenalty = 0.0055
 
 SWEP.RecoilResetInstant = false

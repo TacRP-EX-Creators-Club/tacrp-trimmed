@@ -33,7 +33,7 @@ SWEP.BalanceStats = {
         Range_Max = 2500,
         RPM = 400,
         RecoilKick = 6,
-        JamFactor = 0.12,
+        JamFactor = 0,
 
         BodyDamageMultipliers = {
             [HITGROUP_HEAD] = 4,
@@ -141,7 +141,7 @@ SWEP.RecoilSpreadPenalty = 0.0045
 
 SWEP.CanBlindFire = true
 
-SWEP.JamFactor = 0.175
+SWEP.JamFactor = 0
 
 // handling
 

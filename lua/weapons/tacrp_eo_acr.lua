@@ -4,8 +4,8 @@ SWEP.Spawnable = true
 AddCSLuaFile()
 
 // names and stuff
-SWEP.PrintName = "B-ACR"
-SWEP.AbbrevName = "B-ACR"
+SWEP.PrintName = "ACR"
+SWEP.AbbrevName = "ACR"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "1Elite"
