@@ -2,26 +2,6 @@ local ATT = {}
 
 -------------------------------------------------
 ATT = {}
-ATT.PrintName = "att.acc_extmag.name"
-ATT.FullName = "att.acc_extmag.name.full"
-ATT.Icon = Material("entities/tacrp_att_acc_extmag_shotgun.png", "mips smooth")
-ATT.Description = "att.acc_extmag.desc"
-ATT.Pros = {"stat.clipsize"}
-
-ATT.Category = "acc_extmag_a5"
-
-ATT.InvAtt = "acc_extmag_rifle"
-
-ATT.SortOrder = 1
-
-ATT.Add_ClipSize = 2
-
-ATT.InstalledElements = {"extmag"}
-
-TacRP.LoadAtt(ATT, "acc_extmag_auto5")
-
--------------------------------------------------
-ATT = {}
 ATT.PrintName = "Marksman"
 ATT.FullName = "Marksman Trigger"
 ATT.Icon = Material("entities/tacrp_att_trigger_semi.png", "mips smooth")
@@ -47,33 +27,6 @@ ATT.Add_Damage_Min = 2
 ATT.Mult_RPM = 0.75
 
 TacRP.LoadAtt(ATT, "trigger_dual_uzis_semi")
-
--------------------------------------------------
-ATT = {}
-ATT.PrintName = "Spin"
-ATT.FullName = "Revolver Spin"
-
-ATT.Icon = Material("entities/tacrp_sd_1858.png", "mips smooth")
-ATT.Description = "wheeeeeeeeeeeee"
-ATT.Pros = {"att.procon.yeehaw"}
-
-ATT.Category = "tac_1858"
-ATT.SortOrder = 1
-ATT.Free = true
-
-ATT.Override_Sound_ToggleTactical = ""
-ATT.CanToggle = true
-ATT.CustomTacticalHint = "hint.tac.spin_revolver"
-
-ATT.Hook_ToggleTactical = function(wep)
-    if wep:StillWaiting() then return true end
-    wep:ScopeToggle(0)
-    wep:PlayAnimation("draw", 1, false, true)
-    wep:SetNextPrimaryFire(CurTime() + 0.25)
-    return true
-end
-
-TacRP.LoadAtt(ATT, "tac_1858_spin")
 
 -------------------------------------------------
 ATT = {}
@@ -277,72 +230,3 @@ if engine.ActiveGamemode() == "terrortown" then
 end
 
 TacRP.LoadAtt(ATT, "ammo_gyrojet_he")
-
--------------------------------------------------
-ATT = {}
-ATT.PrintName = ".45 Colt"
-ATT.FullName = "Remington 1858 .45 Colt Conversion"
-
-ATT.Icon = Material("entities/tacrp_att_ammo_1858_45colt.png", "mips smooth")
-ATT.Description = "Cartridge conversion firing larger, more powerful, but less reliable rounds."
-ATT.Pros = {"stat.damage", "stat.range_min", "att.procon.armor"}
-ATT.Cons = {"rating.control", "att.procon.unreliable"}
-
-ATT.Category = "ammo_1858"
-
-ATT.SortOrder = 1
-
-ATT.Add_ArmorPenetration = 0.15
-
-ATT.Add_Range_Min = 200
-ATT.Add_RecoilVisualKick = 1
-ATT.Add_RecoilKick = 4
-ATT.Mult_RecoilStability = 0.25
-ATT.Mult_MuzzleVelocity = 1.25
-
-ATT.Mult_Damage_Max = 1.25
-ATT.Mult_Damage_Min = 1.25
-ATT.Add_Damage_Min = 5
-
-ATT.Add_JamFactor = 2
-
-ATT.Add_Pitch_Shoot = 7
-
-ATT.InstalledElements = {"cylinder"}
-
-ATT.Override_Sound_Shoot = "^tacint_shark/weapons/1858/nma_fire_45.wav"
-
-TacRP.LoadAtt(ATT, "ammo_1858_45colt")
-
--------------------------------------------------
-ATT = {}
-ATT.PrintName = ".36 Percussion"
-ATT.FullName = "Remington 1858 .36 Caliber Conversion"
-
-ATT.Icon = Material("entities/tacrp_att_ammo_1858_36perc.png", "mips smooth")
-ATT.Description = "Caliber conversion firing smaller rounds with better range."
-ATT.Pros = {"stat.range", "stat.recoil", "stat.rpm"}
-ATT.Cons = {"stat.damage_max", "att.procon.armor"}
-
-ATT.Category = "ammo_1858"
-
-ATT.SortOrder = 2
-ATT.Ammo = "pistol"
-
-ATT.Mult_ArmorBonus = 0.5
-
-ATT.Mult_Range_Max = 1.5
-ATT.Mult_Range_Min = 2
-ATT.Mult_Spread = 0.75
-
-ATT.Mult_RecoilVisualKick = 0.75
-ATT.Mult_RecoilKick = 0.5
-
-ATT.Mult_Damage_Max = 0.8
-
-ATT.Mult_RPM = 1.15
-ATT.Mult_ShootTimeMult = 0.85
-
-ATT.Add_Pitch_Shoot = -5
-
-TacRP.LoadAtt(ATT, "ammo_1858_36perc")
