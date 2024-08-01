@@ -6,10 +6,10 @@ AddCSLuaFile()
 // names and stuff
 SWEP.PrintName = "M320"
 SWEP.AbbrevName = "M320"
-SWEP.Category = "Tactical RP"
+SWEP.Category = "Tactical RP (Special)"
 
 SWEP.SubCatTier = "9Special"
-SWEP.SubCatType = "8Launcher"
+SWEP.SubCatType = "6Launcher"
 
 SWEP.Description = "Grenade launcher capable of firing a variety of payloads."
 
