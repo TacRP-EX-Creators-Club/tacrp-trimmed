@@ -8,7 +8,7 @@ SWEP.PrintName = "Mk 14 SOPMOD"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "2Operator"
-SWEP.SubCatType = "7Sniper Rifle"
+SWEP.SubCatType = "5Battle Rifle"
 
 SWEP.Description = "Modernized short barrel rifle with improved mobility and fast automatic fire but punishing recoil.\nEquipped with a 6x scope by default."
 
