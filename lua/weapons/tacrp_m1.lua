@@ -4,8 +4,8 @@ SWEP.Spawnable = true
 AddCSLuaFile()
 
 // names and stuff
-SWEP.PrintName = "Mini-14"
-SWEP.AbbrevName = "Mini-14"
+SWEP.PrintName = "AC556"
+SWEP.AbbrevName = "AC556"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "5Value"
@@ -28,13 +28,13 @@ SWEP.Slot = 2
 
 SWEP.BalanceStats = {
     [TacRP.BALANCE_SBOX] = {
-        Damage_Max = 22,
-        Damage_Min = 14,
+        Damage_Max = 18,
+        Damage_Min = 12,
         ArmorPenetration = 0.8,
         ArmorBonus = 1,
 
         BodyDamageMultipliers = {
-            [HITGROUP_HEAD] = 4,
+            [HITGROUP_HEAD] = 3,
             [HITGROUP_CHEST] = 1,
             [HITGROUP_STOMACH] = 1.25,
             [HITGROUP_LEFTARM] = 1,
@@ -44,24 +44,24 @@ SWEP.BalanceStats = {
             [HITGROUP_GEAR] = 0.9
         },
 
-        RPM = 600,
-        RecoilSpreadPenalty = 0.0045,
+        RPM = 800,
+        RecoilSpreadPenalty = 0.0065,
         HipFireSpreadPenalty = 0.008,
     },
     [TacRP.BALANCE_TTT] = {
 
-        Damage_Max = 20,
-        Damage_Min = 12,
+        Damage_Max = 18,
+        Damage_Min = 9,
         Range_Min = 500,
         Range_Max = 1500,
-        RPM = 300,
+        RPM = 650,
 
         Spread = 0.0075,
         HipFireSpreadPenalty = 0.005,
-        RecoilSpreadPenalty = 0.005,
+        RecoilSpreadPenalty = 0.007,
 
         BodyDamageMultipliers = {
-            [HITGROUP_HEAD] = 3,
+            [HITGROUP_HEAD] = 2,
             [HITGROUP_CHEST] = 1.25,
             [HITGROUP_STOMACH] = 1,
             [HITGROUP_LEFTARM] = 0.9,
@@ -75,8 +75,8 @@ SWEP.BalanceStats = {
         Damage_Max = 10,
         Damage_Min = 4,
 
-        RPM = 450,
-        RecoilSpreadPenalty = 0.003,
+        RPM = 800,
+        RecoilSpreadPenalty = 0.005,
         HipFireSpreadPenalty = 0.008,
     },
     [TacRP.BALANCE_OLDSCHOOL] = {
@@ -88,8 +88,8 @@ SWEP.TTTReplace = TacRP.TTTReplacePreset.AssaultRifle
 
 // "ballistics"
 
-SWEP.Damage_Max = 22
-SWEP.Damage_Min = 12
+SWEP.Damage_Max = 16
+SWEP.Damage_Min = 10
 SWEP.Range_Min = 600
 SWEP.Range_Max = 2500
 SWEP.Penetration = 7
@@ -97,7 +97,7 @@ SWEP.ArmorPenetration = 0.775
 SWEP.ArmorBonus = 0.75
 
 SWEP.BodyDamageMultipliers = {
-    [HITGROUP_HEAD] = 4,
+    [HITGROUP_HEAD] = 2,
     [HITGROUP_CHEST] = 1,
     [HITGROUP_STOMACH] = 1,
     [HITGROUP_LEFTARM] = 1,
@@ -111,13 +111,13 @@ SWEP.MuzzleVelocity = 20000
 
 // misc. shooting
 
-SWEP.Firemodes = {2, 1}
+SWEP.Firemode = 2
 
-SWEP.RPM = 900
+SWEP.RPM = 800
 SWEP.RPMMultSemi = 0.6
 
 SWEP.Spread = 0.0045
-SWEP.RecoilSpreadPenalty = 0.005
+SWEP.RecoilSpreadPenalty = 0.007
 SWEP.HipFireSpreadPenalty = 0.0055
 
 SWEP.RecoilResetInstant = false
