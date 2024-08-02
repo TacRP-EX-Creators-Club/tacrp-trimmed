@@ -367,6 +367,7 @@ TacRP.LoadAtt(ATT, "optic_shortdot")
 ------------------------------
 ATT = {}
 
+ATT.Ignore = true
 ATT.PrintName = "Corner-Cam"
 ATT.Icon = Material("entities/tacrp_att_tac_cornershot.png", "mips smooth")
 ATT.Description = "Displays point of aim while blindfiring."
@@ -808,6 +809,7 @@ TacRP.LoadAtt(ATT, "tac_rangefinder")
 ------------------------------
 ATT = {}
 
+ATT.Ignore = true
 ATT.PrintName = "Spread Gauge"
 ATT.Icon = Material("entities/tacrp_att_tac_rangefinder.png", "mips smooth")
 ATT.Description = "Measures weapon stability from sway and bloom."
@@ -979,6 +981,7 @@ TacRP.LoadAtt(ATT, "tac_spreadgauge")
 ------------------------------
 ATT = {}
 
+ATT.Ignore = true
 ATT.PrintName = "2x Zoom"
 ATT.FullName = "Variable Zoom Optic (2x)"
 ATT.Icon = Material("entities/tacrp_att_tac_magnifier.png", "mips smooth")
@@ -1004,6 +1007,7 @@ TacRP.LoadAtt(ATT, "tac_magnifier")
 ------------------------------
 ATT = {}
 
+ATT.Ignore = true
 ATT.FullName = "Emergency Bullet"
 ATT.PrintName = "Emrg. Bullet"
 ATT.Icon = Material("entities/tacrp_att_tac_bullet.png", "mips smooth")
