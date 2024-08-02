@@ -19,6 +19,7 @@ SWEP.WorldModel = "models/weapons/tacint/w_medkit.mdl"
 
 SWEP.NoRanger = true
 SWEP.NoStatBox = true
+SWEP.HUDAmmoMeter = true
 
 SWEP.Slot = 4
 
@@ -184,7 +185,7 @@ function SWEP:SecondaryAttack()
 end
 
 function SWEP:Think()
-    if self:GetCharge() and self:GetNextPrimaryFire() < CurTime() then
+    if IsFirstTimePredicted() and self:GetCharge() and self:GetNextPrimaryFire() < CurTime() then
         if !IsValid(self.HealTarget) or
         self:Clip1() <= 0 or
         (self.HealTarget:GetPos() - self:GetOwner():GetPos()):Length() > 64
@@ -202,6 +203,11 @@ function SWEP:Think()
         else
             local selfheal = self.HealTarget == self:GetOwner()
             local amt = TacRP.ConVars[selfheal and "medkit_heal_self" or "medkit_heal_others"]:GetInt()
+
+            local ret = hook.Run("TacRP_MedkitHeal", self, self:GetOwner(), self.HealTarget, {amt})
+            amt = ret and ret[1] or amt
+            if amt == 0 then return end
+
             self:SetClip1(self:Clip1() - 1)
             self.HealTarget:SetHealth(math.min(self.HealTarget:Health() + amt, self.HealTarget:GetMaxHealth()))
             self:SetNextPrimaryFire(CurTime() + TacRP.ConVars["medkit_interval"]:GetFloat())
