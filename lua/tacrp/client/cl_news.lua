@@ -973,6 +973,7 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 
 <h3>Changelist</h3>
 <ul>
+<li><b>Added:</b> ConVars for tweaking Medkit behavior, in Equipment tab.
 <li><b>Added:</b> ConVar multipliers for Headshot Damage and Melee Weapon Damage.
 <li><b>Added:</b> USP 9mm conversion attachment (using HL2 sounds).
 <li><b>Added:</b> Quotes for various weapons.
@@ -984,6 +985,7 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 <li><b>Changed:</b> Rangefinder now displays range as a percentage on the point of aim.
 <li><b>Changed:</b> Thermal Imager renamed, no longer blurs when peeking.
 <li><b>Changed:</b> SAPHE can now damage Combine Helicopters and LVS vehicles.
+<li><b>Changed:</b> Riot shield user will now be knocked back by melee attacks, and can't block melee attacks when attacking.
 <li><b>Fixed:</b> 40mm Healing grenades not healing.
 <li><b>Fixed:</b> Some sight issues with RMR being on guns it should not.
 <li><b>Fixed:</b> Missing accessory slot for some akimbos.

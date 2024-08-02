@@ -12,6 +12,7 @@ SWEP.SubCatTier = "9Special"
 SWEP.SubCatType = "9Equipment"
 
 SWEP.Description = "Lightweight shield. Despite its plastic-looking core, it is capable of stopping almost all rifle caliber rounds.\nAble to sprint and melee attack without compromising the user's safety, but slows down move speed slightly."
+SWEP.Credits = "Model/Texture: Tactical Intervention\nAnimation: Arqu"
 
 SWEP.ViewModel = "models/weapons/tacint/v_riot_shield-2.mdl"
 SWEP.WorldModel = "models/weapons/tacint/w_riot_shield_2.mdl"
@@ -300,11 +301,16 @@ hook.Add("EntityTakeDamage", "TacRP_RiotShield", function(ent, dmginfo)
     local wep = ent:GetActiveWeapon()
 
     if !IsValid(wep) or wep:GetClass() != "tacrp_riot_shield" then return end
+
+    local dir = (dmginfo:GetDamagePosition() - ent:EyePos()):GetNormalized()
+
     if (dmginfo:GetAttacker():GetPos() - ent:EyePos()):GetNormalized():Dot(ent:EyeAngles():Forward()) < 0.5
-    and ((dmginfo:GetDamagePosition() - ent:EyePos()):GetNormalized():Dot(ent:EyeAngles():Forward()) < 0.5) then return end
+    and (dir:Dot(ent:EyeAngles():Forward()) < 0.5) then return end
     if dmginfo:IsExplosionDamage() or dmginfo:GetInflictor():GetClass() == "entityflame" then return end
 
-    if dmginfo:IsDamageType(DMG_GENERIC) or dmginfo:IsDamageType(DMG_CLUB) or dmginfo:IsDamageType(DMG_CRUSH) or dmginfo:IsDamageType(DMG_SLASH) or dmginfo:GetDamageType() == 0 then
+    if !wep:StillWaiting() and (dmginfo:IsDamageType(DMG_CLUB) or dmginfo:IsDamageType(DMG_CRUSH) or dmginfo:IsDamageType(DMG_SLASH) or dmginfo:GetDamageType() == DMG_GENERIC) then
+        wep:GetOwner():ViewPunch(AngleRand(-1, 1) * math.Clamp(dmginfo:GetDamage() ^ 0.5, 1, 15))
+        wep:GetOwner():SetVelocity(dir * -200 * math.Clamp(dmginfo:GetDamage() ^ 0.25, 1, 4))
         return true
     end
 
