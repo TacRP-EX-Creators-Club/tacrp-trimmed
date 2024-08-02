@@ -250,7 +250,7 @@ SWEP.LastShot = false
 SWEP.Attachments = {
     [1] = {
         PrintName = "Optic",
-        Category = {"optic_cqb", "optic_medium", "optic_sniper", "ironsights"},
+        Category = {"optic_pistol_alt", "optic_cqb", "optic_medium", "optic_sniper", "ironsights"},
         Bone = "g2_barrel",
         InstalledElements = {"sights"},
 

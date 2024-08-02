@@ -308,7 +308,7 @@ ATT.Model = "models/weapons/tacint/addons/optic_rmr_hq.mdl"
 ATT.Scale =  1
 ATT.ModelOffset = Vector(0, -0, -0.4)
 
-ATT.Category = "optic_cqb"
+ATT.Category = "optic_pistol_alt"
 ATT.InvAtt = "optic_rmr"
 
 ATT.SortOrder = 1
