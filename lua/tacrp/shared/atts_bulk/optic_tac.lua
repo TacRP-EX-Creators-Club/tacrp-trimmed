@@ -345,7 +345,7 @@ ATT.Model = "models/weapons/tacint_extras/addons/schd.mdl"
 ATT.Scale = 1.15
 ATT.ModelOffset = Vector(-1, 0, -0.45)
 
-ATT.Category = "optic_medium"
+ATT.Category = {"optic_pistol_alt", "optic_medium"}
 
 ATT.SortOrder = 5
 
