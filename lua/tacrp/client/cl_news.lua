@@ -974,11 +974,12 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 <h3>Changelist</h3>
 <ul>
 <li><b>Added:</b> ConVars for tweaking Medkit and Riot Shield behavior, in Equipment tab.
+<li><b>Added:</b> ConVars to disable door busting.
 <li><b>Added:</b> ConVar multipliers for Headshot Damage and Melee Weapon Damage.
 <li><b>Added:</b> USP 9mm conversion attachment (using HL2 sounds).
 <li><b>Added:</b> Quotes for various weapons.
 <li><b>Added:</b> Additional localization.
-<li><b>Added:</b> Credits for Medkit and Riot Shield animations. (thanks to Lazarus and Arqu!)
+<li><b>Added:</b> Credits for Medkit and Riot Shield animations. (thanks Arqu!)
 <li><b>Changed:</b> Reworked missile logic for the Stinger and SMAW.
 <li><b>Changed:</b> Melee Techinques are now free attachments.
 <li><b>Changed:</b> Removed chance to fail an unjam attempt.
@@ -987,10 +988,12 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 <li><b>Changed:</b> Thermal Imager renamed, no longer blurs when peeking.
 <li><b>Changed:</b> SAPHE can now damage Combine Helicopters and LVS vehicles.
 <li><b>Changed:</b> Riot Shield can't block melee attacks when attacking.
+<li><b>Fixed:</b> Improved projectile impact damage consistency.
 <li><b>Fixed:</b> 40mm Healing grenades not healing.
 <li><b>Fixed:</b> RMR being on guns it should not.
 <li><b>Fixed:</b> Missing accessory slot for some akimbos.
 <li><b>Fixed:</b> Missing sling and other accessory attachments on some guns.
+<li><b>Rebalance:</b> Tweaked explosive damage and radius. TTT gamemode no longer reduces explosive damage.
 <li><b>Rebalance:</b> Breaching Brake gives slight increase in recoil stability.
 <li><b>Rebalance:</b> Dual MTX minor damage buff and recoil increase.
 <li><b>Rebalance:</b> P250 minor damage increase.
@@ -1004,6 +1007,7 @@ Notably, some weapons in the base pack are now Value grade, a new lowest grade t
 <li><b>Added:</b> SMAW Hummingbird rockets, XM25 flechettes and HEAT grenades.
 <li><b>Changed:</b> Tweaked Kar98k reload behavior.
 <li><b>Changed:</b> Intervention MLG sound now an ammo type. Does what you would expect.
+<li><b>Changed:</b> Improved Groza animations.
 <li><b>Fixed:</b> SMAW projectiles not obeying explosive damage scaling.
 <li><b>Rebalance:</b> Buff PSG-1, Amphibian, P210; nerf SR-25; tweaked Kar98k.
 </ul>
