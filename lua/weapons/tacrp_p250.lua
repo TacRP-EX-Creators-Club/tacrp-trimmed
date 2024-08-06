@@ -110,7 +110,7 @@ SWEP.BodyDamageMultipliers = {
 
 SWEP.Firemode = 1
 
-SWEP.RPM = 500
+SWEP.RPM = 525
 SWEP.RPMMultSemi = 0.7
 
 SWEP.Spread = 0.004
@@ -179,7 +179,7 @@ SWEP.HolsterAng = Angle(90, 0, 0)
 
 // reload
 
-SWEP.ClipSize = 13
+SWEP.ClipSize = 12
 SWEP.Ammo = "pistol"
 SWEP.Ammo_Expanded = "ti_pistol_heavy"
 
