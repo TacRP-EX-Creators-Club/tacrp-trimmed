@@ -8,7 +8,7 @@ SWEP.PrintName = "KAC PDW"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "1Elite"
-SWEP.SubCatType = "3Submachine Gun"
+SWEP.SubCatType = "4Assault Rifle"
 
 SWEP.Description = "Carbine caliber subcompact PDW. The perfect blend of rifle and submachine gun."
 
