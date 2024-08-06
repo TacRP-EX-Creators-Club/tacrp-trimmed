@@ -28,7 +28,7 @@ SWEP.BalanceStats = {
     [TacRP.BALANCE_SBOX] = {
         Damage_Max = 28,
         Damage_Min = 9,
-        RPM = 420,
+        RPM = 600,
         Spread = 0.02,
 
         ShootingSpeedMult = 0.75,
@@ -99,7 +99,7 @@ SWEP.Firemode = false
 SWEP.RunawayBurst = false
 SWEP.PostBurstDelay = 0.06
 
-SWEP.RPM = 500
+SWEP.RPM = 750
 SWEP.RPMMultBurst = 1.1
 SWEP.RPMMultSemi = 1.1
 
