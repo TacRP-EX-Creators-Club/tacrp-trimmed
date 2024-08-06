@@ -157,7 +157,7 @@ SWEP.SprintPos = Vector(5, 0, -2)
 SWEP.SightAng = Angle(-0.95, -1.1, 1)
 SWEP.SightPos = Vector(-4.78, -7.5, -3.45)
 
-SWEP.CorrectivePos = Vector(0.55, 0, -0.55)
+SWEP.CorrectivePos = Vector(0.52, 0, -0.52)
 SWEP.CorrectiveAng = Angle(2.5, 0.45, 0)
 
 SWEP.HolsterVisible = true
