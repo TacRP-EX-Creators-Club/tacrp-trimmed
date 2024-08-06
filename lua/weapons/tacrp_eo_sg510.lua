@@ -103,7 +103,7 @@ SWEP.MuzzleVelocity = 24000
 
 SWEP.Firemodes = {2, 1}
 
-SWEP.RPM = 550
+SWEP.RPM = 475
 
 SWEP.PostBurstDelay = 0.1
 
