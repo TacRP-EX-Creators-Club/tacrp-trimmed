@@ -893,6 +893,14 @@ local conVars = {
         notify = true,
         replicated = true,
     },
+    {
+        name = "dropmagazinemodel",
+        default = "1",
+        min = 0,
+        max = 1,
+        notify = true,
+        replicated = true,
+    },
 
     // --------------------------- Medkit
     {
@@ -969,6 +977,80 @@ local conVars = {
         default = "0",
         min = 0,
         replicated = true,
+    },
+
+    // --------------------------- Grenades
+    {
+        name = "smoke_affectnpcs",
+        default = "1",
+        min = 0,
+        max = 1,
+    },
+    {
+        name = "flash_affectnpcs",
+        default = "1",
+        min = 0,
+        max = 1,
+    },
+    {
+        name = "thermite_damage_min",
+        default = "20",
+        min = 0,
+    },
+    {
+        name = "thermite_damage_max",
+        default = "40",
+        min = 0,
+    },
+    {
+        name = "thermite_radius",
+        default = "200",
+        min = 0,
+    },
+    {
+        name = "frag_damage",
+        default = "150",
+        min = 0,
+    },
+    {
+        name = "frag_radius",
+        default = "350",
+        min = 0,
+    },
+    {
+        name = "charge_damage",
+        default = "500",
+        min = 0,
+    },
+    {
+        name = "charge_radius",
+        default = "200",
+        min = 0,
+    },
+    {
+        name = "c4_damage",
+        default = "300",
+        min = 0,
+    },
+    {
+        name = "c4_radius",
+        default = "400",
+        min = 0,
+    },
+    {
+        name = "healnade_heal",
+        default = "3",
+        min = 0,
+    },
+    {
+        name = "healnade_armor",
+        default = "1",
+        min = 0,
+    },
+    {
+        name = "healnade_damage",
+        default = "20",
+        min = 0,
     },
 }
 
@@ -1217,7 +1299,7 @@ local function menu_server_ti(panel)
         command = "tacrp_crosshair"
     })
     panel:AddControl("checkbox", {
-        label = "Enable HUD (and Minimal HUD)",
+        label = "Enable HUD",
         command = "tacrp_hud"
     })
     panel:AddControl("checkbox", {
@@ -1296,6 +1378,15 @@ local function menu_server_ti(panel)
 
     header(panel, "\nMiscellaneous")
     panel:AddControl("checkbox", {
+        label = "Client Authoratitive Hitreg",
+        command = "tacrp_client_damage"
+    })
+    panel:ControlHelp("Dramatically improve multiplayer hit registration by letting the client declare when damage is dealt.\nMay be abusable by exploiters, so usage in public servers is not recommended.")
+    panel:AddControl("checkbox", {
+        label = "Drop Magazine Models",
+        command = "tacrp_dropmagazinemodel"
+    })
+    panel:AddControl("checkbox", {
         label = "Supply Boxes Resupply Grenades",
         command = "TacRP_resupply_grenades"
     })
@@ -1309,7 +1400,6 @@ local function menu_server_ti(panel)
         command = "tacrp_doorbust"
     })
     panel:ControlHelp("Blow doors off their hinges, even locked ones. If disabled, only unlocked doors can be knocked open, and they won't be blown off.")
-
     panel:AddControl("slider", {
         label = "Door Respawn Time",
         command = "tacrp_doorbust_time",
@@ -1368,8 +1458,9 @@ local function menu_balance_ti(panel)
         command = "tacrp_mult_damage_explosive",
         type = "float",
         min = 0.1,
-        max = 3,
+        max = 10,
     })
+    panel:ControlHelp("Does not affect quicknades.")
     panel:AddControl("slider", {
         label = "Melee Weapon Damage",
         command = "tacrp_mult_damage_melee",
@@ -1377,7 +1468,7 @@ local function menu_balance_ti(panel)
         min = 0.1,
         max = 3,
     })
-    panel:ControlHelp("Does not affect Quick Melee / bashing.")
+    panel:ControlHelp("Does not affect quick melee / bashing.")
     panel:AddControl("slider", {
         label = "Headshot Multiplier",
         command = "tacrp_mult_headshot",
@@ -1576,20 +1667,6 @@ local function menu_mechanics_ti(panel)
         label = "Allow Aiming While Reloading",
         command = "tacrp_ads_reload"
     })
-    panel:AddControl("slider", {
-        label = "Flashbang Slow",
-        command = "tacrp_flash_slow",
-        type = "float",
-        min = 0,
-        max = 1,
-    })
-    panel:AddControl("slider", {
-        label = "CS Gas Sway",
-        command = "tacrp_gas_sway",
-        type = "float",
-        min = 0,
-        max = 10,
-    })
 end
 
 local function menu_atts_ti(panel)
@@ -1648,7 +1725,118 @@ end
 
 
 local function menu_equipment_ti(panel)
-    header(panel, "Medkit")
+    header(panel, "Grenades")
+    panel:AddControl("checkbox", {
+        label = "Smoke Affects NPCs",
+        command = "tacrp_smoke_affectnpcs"
+    })
+    panel:AddControl("checkbox", {
+        label = "Flashbang Affects NPCs",
+        command = "tacrp_flash_affectnpcs"
+    })
+    panel:AddControl("slider", {
+        label = "Flashbang Slow",
+        command = "tacrp_flash_slow",
+        type = "float",
+        min = 0,
+        max = 1,
+    })
+    panel:AddControl("slider", {
+        label = "Frag Grenade Damage",
+        command = "tacrp_frag_damage",
+        type = "int",
+        min = 50,
+        max = 500,
+    })
+    panel:AddControl("slider", {
+        label = "Frag Grenade Radius",
+        command = "tacrp_frag_radius",
+        type = "int",
+        min = 64,
+        max = 512,
+    })
+    panel:AddControl("slider", {
+        label = "Thermite Starting Damage",
+        command = "tacrp_thermite_damage_min",
+        type = "int",
+        min = 1,
+        max = 100,
+    })
+    panel:AddControl("slider", {
+        label = "Thermite Maximum Damage",
+        command = "tacrp_thermite_damage_max",
+        type = "int",
+        min = 1,
+        max = 100,
+    })
+    panel:AddControl("slider", {
+        label = "Thermite Radius",
+        command = "tacrp_thermite_radius",
+        type = "int",
+        min = 64,
+        max = 512,
+    })
+    panel:ControlHelp("Thermite damage is dealt every 0.2s and falls off with distance.")
+    panel:AddControl("slider", {
+        label = "Door Charge Damage",
+        command = "tacrp_charge_damage",
+        type = "int",
+        min = 100,
+        max = 1000,
+    })
+    panel:AddControl("slider", {
+        label = "Door Charge Radius",
+        command = "tacrp_charge_radius",
+        type = "int",
+        min = 64,
+        max = 512,
+    })
+    panel:AddControl("slider", {
+        label = "C4 Damage",
+        command = "tacrp_c4_damage",
+        type = "int",
+        min = 100,
+        max = 1000,
+    })
+    panel:AddControl("slider", {
+        label = "C4 Radius",
+        command = "tacrp_c4_radius",
+        type = "int",
+        min = 64,
+        max = 512,
+    })
+    panel:ControlHelp("C4 does its damage a second time with half the radius.")
+    panel:AddControl("slider", {
+        label = "Medi-Smoke Health",
+        command = "tacrp_healnade_heal",
+        type = "int",
+        min = 0,
+        max = 20,
+    })
+    panel:AddControl("slider", {
+        label = "Medi-Smoke Armor",
+        command = "tacrp_healnade_heal",
+        type = "int",
+        min = 0,
+        max = 20,
+    })
+    panel:AddControl("slider", {
+        label = "Medi-Smoke Damage",
+        command = "tacrp_healnade_damage",
+        type = "int",
+        min = 0,
+        max = 100,
+    })
+    panel:ControlHelp("Medi-Smoke damage is applied to anything considered a zombie.")
+    panel:AddControl("slider", {
+        label = "CS Gas Sway",
+        command = "tacrp_gas_sway",
+        type = "float",
+        min = 0,
+        max = 10,
+    })
+
+    header(panel, "\nMedkit")
     panel:AddControl("checkbox", {
         label = "Only Regen Charge When Held",
         command = "tacrp_medkit_regen_activeonly"
