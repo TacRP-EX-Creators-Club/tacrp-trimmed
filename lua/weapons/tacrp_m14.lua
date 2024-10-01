@@ -5,11 +5,11 @@ AddCSLuaFile()
 
 // names and stuff
 SWEP.PrintName = "M14"
-SWEP.AbbrevName = "M1A"
+SWEP.AbbrevName = "M14"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "3Security"
-SWEP.SubCatType = "5Battle Rifle"
+SWEP.SubCatType = "7Sniper Rifle"
 
 SWEP.Description = "Semi-automatic rifle with a lethal headshot.\nEquipped with a 6x scope by default."
 

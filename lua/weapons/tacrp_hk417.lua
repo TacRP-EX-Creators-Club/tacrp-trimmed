@@ -9,7 +9,7 @@ SWEP.AbbrevName = "HK417"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "1Elite"
-SWEP.SubCatType = "5Battle Rifle"
+SWEP.SubCatType = "4Assault Rifle"
 
 SWEP.Description = "Battle rifle with superb damage, fire rate and precision. Capable of automatic fire, although it is very unstable."
 

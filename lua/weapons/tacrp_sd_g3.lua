@@ -9,7 +9,7 @@ SWEP.AbbrevName = "G3"
 SWEP.Category = "Tactical RP"
 
 SWEP.SubCatTier = "3Security"
-SWEP.SubCatType = "5Battle Rifle"
+SWEP.SubCatType = "4Assault Rifle"
 
 SWEP.Description = "Precise heavy battle rifle with a somewhat managable automatic firemode but slow handling."
 
